@@ -1,40 +1,18 @@
-// src/_db.ts
-
-export type Game = {
-    id: string;
-    title: string;
-    platforms: string[];
-};
-
-export type Author = {
-    id: string;
-    name: string;
-    verified: boolean;
-};
-
-export type Review = {
-    id: string;
-    rating: number; // integer 1-10
-    content: string;
-    authorId: string;
-    gameId: string;
-};
-
-export const games: Game[] = [
+const games = [
     { id: '1', title: 'GTA V', platforms: ['PC', 'PS5', 'Xbox Series X'] },
     { id: '2', title: 'Elden Ring', platforms: ['PC', 'PS5', 'Xbox Series X'] },
     { id: '3', title: 'Stardew Valley', platforms: ['PC', 'Switch', 'Mobile'] },
     { id: '4', title: 'Among Us', platforms: ['PC', 'Mobile', 'Switch'] },
 ];
 
-export const authors: Author[] = [
+const authors = [
     { id: 'a1', name: 'Alice Johnson', verified: true },
     { id: 'a2', name: 'Bob Smith', verified: false },
     { id: 'a3', name: 'Carmen Lee', verified: true },
     { id: 'a4', name: 'David Kim', verified: false },
 ];
 
-export const reviews: Review[] = [
+const reviews = [
     {
         id: 'r1',
         rating: 9,
@@ -71,3 +49,5 @@ export const reviews: Review[] = [
         gameId: '3',
     },
 ];
+
+export default { games, authors, reviews };

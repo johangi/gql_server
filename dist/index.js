@@ -7,8 +7,17 @@ import { typeDefs } from "./schema.js";
 const resolvers = {
     Query: {
         authors: () => authors,
+        author: (_parent, args) => {
+            return authors.find(author => author.id === args.id);
+        },
         games: () => games,
+        game: (_parent, args) => {
+            return games.find(game => game.id === args.id);
+        },
         reviews: () => reviews,
+        review: (_parent, args) => {
+            return reviews.find(review => review.id === args.id);
+        },
     }
 };
 // server setup
